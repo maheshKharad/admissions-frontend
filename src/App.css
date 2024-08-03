@@ -1,0 +1,147 @@
+.container {
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  width: auto;
+  background: rgb(252, 254, 255);
+}
+
+.allFormContainer {
+  display: flex;
+  width: auto;
+  background: rgb(252, 254, 255);
+  margin: 10px;
+}
+.studentCard{
+  position: fixed;
+  width: 60%;
+}
+.allForm {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  margin: 10px;
+}
+
+.studentadmissioncontainer {
+  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  width: max-content;
+  background: rgb(252, 254, 255);
+}
+
+body {
+  background-color: aqua;
+}
+
+.inner_container {
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  /* background-color: rgb(129, 146, 146); */
+}
+
+.input {
+  margin: 5px;
+}
+
+.mainapp {
+  display: flex;
+}
+
+.box {
+  padding: 1px;
+}
+
+button,
+input {
+  padding: 4px;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+button {
+  border: none;
+}
+
+
+.h1 {
+  font-size: larger;
+  padding-left: 200;
+  width: 10px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.sidebar>div {
+  margin: 20px 30px;
+}
+
+.btn {
+  margin-right: 50px;
+  margin-right: 100px;
+  margin-right: 50px;
+  padding: 200px;
+  width: 100px;
+}
+
+.h1 {
+  display: flex;
+  padding-top: 130px;
+  margin: 50px 50px;
+  width:auto;
+  display: flex;
+  justify-content: space-between;
+}
+.h2 {
+  padding-top: 150px;
+  margin: 20px 110px;
+}
+
+.studentforms {
+  /* display: block; */
+  position: relative;
+  top: 20%;
+  left: 10%
+}
+
+.Btn1 {
+  padding-top: 30px;
+  margin-left: 5px;
+}
+
+.burger {
+  display: block;
+  position: fixed;
+  right: 10px;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  margin-left: 100px;
+}
+.Text{
+  margin: 10px;
+  margin-left: 300px;
+}
+.box1{
+  margin-left: 6px;
+}
+.pay{
+  display: flex;
+  justify-content: space-between;
+}
