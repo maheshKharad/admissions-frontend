@@ -3,7 +3,7 @@ import { Card, Button, NavLink, Title, Grid, TextInput } from '@mantine/core';
 import axios from 'axios';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Text } from '@mantine/core';
-import { SERVER_URL } from '../server';
+import { SERVER_URL, FRONTEND_URL } from '../server';
 
 export const AllForm = () => {
     // const [component, setComponent] = useState('createComponent');
@@ -89,7 +89,7 @@ export const AllForm = () => {
                                         <Title order={3}>{form.title}</Title>
                                     </div>
                                     <div>
-                                        <NavLink variant="filled" style={{ backgroundColor: '#ddddf8', marginTop: '20px', borderRadius: '10px' }} label={`http://localhost:3000/Admissionsform?formId=${form._id}`} href={`http://localhost:3000/Admissionsform?formId=${form._id}`} />
+                                        <NavLink variant="filled" style={{ backgroundColor: '#ddddf8', marginTop: '20px', borderRadius: '10px' }} label={`${FRONTEND_URL}/Admissionsform?formId=${form._id}`} href={`${FRONTEND_URL}/Admissionsform?formId=${form._id}`} />
                                     </div>
                                 </div>
                                 <div className='h1'>
