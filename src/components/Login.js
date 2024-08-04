@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Card, Button, TextInput } from '@mantine/core';
+import { SERVER_URL } from '../server';
 function Login() {
     const intialState = {
         email: "",
@@ -17,9 +18,8 @@ function Login() {
     };
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log("xcfgxd", login);
         try {
-            const response = await axios.post("http://localhost:5000/login", login);
+            const response = await axios.post(`${SERVER_URL}/login`, login);
 
             console.log("response", response)
 

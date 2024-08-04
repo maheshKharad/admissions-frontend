@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, TextInput } from '@mantine/core';
+import { SERVER_URL } from '../server';
+
 export const Create = () => {
 
     const [error, setError] = useState({ color: "red", visibility: "hidden" })
@@ -22,7 +24,7 @@ export const Create = () => {
             aFees: aFees
         }
         try {
-            const response = await axios.post("http://localhost:5000/create", data);
+            const response = await axios.post(`${SERVER_URL}/create`, data);
             console.log("response", response)
 
             if (response.data.email) {

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { SERVER_URL } from '../server';
+
 import { Card, TextInput } from '@mantine/core';
 function SingUp() {
     const intialState = {
@@ -20,7 +22,7 @@ function SingUp() {
             navigate("/signup");
         }
         try {
-            const response = await axios.post("http://localhost:5000/signup", signup);
+            const response = await axios.post(`${SERVER_URL}/signup`, signup);
             navigate("/");
             console.log(response)
         } catch (err) {

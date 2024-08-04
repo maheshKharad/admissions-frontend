@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Card, Grid, TextInput } from '@mantine/core';
+import { SERVER_URL } from '../server';
 
 function Admissionsform() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -36,7 +37,7 @@ function Admissionsform() {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/submitstudentadmissionsform", data);
+            const response = await axios.post(`${SERVER_URL}/submitstudentadmissionsform`, data);
             console.log("response", response)
 
             if (response.data.data) {

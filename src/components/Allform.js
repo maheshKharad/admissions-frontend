@@ -3,6 +3,7 @@ import { Card, Button, NavLink, Title, Grid, TextInput } from '@mantine/core';
 import axios from 'axios';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Text } from '@mantine/core';
+import { SERVER_URL } from '../server';
 
 export const AllForm = () => {
     // const [component, setComponent] = useState('createComponent');
@@ -15,7 +16,7 @@ export const AllForm = () => {
 
     const getdata = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/getAdmissionForms");
+            const response = await axios.get(`${SERVER_URL}/getAdmissionForms`);
             setData(response.data.data);
         } catch (error) {
             console.error("Error fetching admission forms:", error);
@@ -25,7 +26,7 @@ export const AllForm = () => {
         try {
             setStudentsData([]);
             setSelectedFormId(id);
-            const response = await axios.post(`http://localhost:5000/getstudentadmissionsform?formId=${id}`);
+            const response = await axios.post(`${SERVER_URL}/getstudentadmissionsform?formId=${id}`);
             setStudentsData(response.data.data);
         } catch (error) {
             console.error("Error fetching student data:", error);
@@ -40,7 +41,7 @@ export const AllForm = () => {
         try {
 
             setSelectedFormId(studentId);
-            const response = await axios.delete(`http://localhost:5000/deletestudent?studentId=${studentId}`);
+            const response = await axios.delete(`${SERVER_URL}/deletestudent?studentId=${studentId}`);
             setStudentsData(response.data.data);
             setStudentsData(studentsData.filter(student => student._id !== studentId));
         } catch (error) {
@@ -49,7 +50,7 @@ export const AllForm = () => {
     };
     const handleDeleteStudentData = async (formId) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/deleteform?formId=${formId}`);
+            const response = await axios.delete(`${SERVER_URL}/deleteform?formId=${formId}`);
             setData(data.filter(form => form._id !== formId));
         } catch (error) {
             console.error("Error deleting form:", error);
@@ -65,7 +66,7 @@ export const AllForm = () => {
     const handleUpdateStudent = async () => {
         updateData['studentId'] = selectedStudent._id
         try {
-            const response = await axios.put(`http://localhost:5000/updatestudent`, updateData);
+            const response = await axios.put(`${SERVER_URL}/updatestudent`, updateData);
             setStudentsData(studentsData.map(student => student._id === selectedStudent._id ? response.data.data : student))
             close();
             handleOpenStudentData(selectedFormId)
